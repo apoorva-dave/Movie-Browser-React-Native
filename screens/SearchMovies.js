@@ -52,9 +52,20 @@ export default class SearchMovies extends React.Component {
 
   movieTitle = ({ item }) => {
     return (
+      <TouchableHighlight
+        style={styles.highlight}
+        underlayColor="white"
+        onPress={() => {
+          this.props.navigation.navigate("MovieDetails", {
+            title: item.title,
+            id: item.imdbID
+          });
+        }}
+      >
         <View>
           <Text style={styles.title}>{item.Title}</Text>
         </View>
+      </TouchableHighlight>
     );
   };
 
