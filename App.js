@@ -1,6 +1,6 @@
 import 'react-native-gesture-handler';
 import React from 'react';
-import { StyleSheet, Text, View, TextInput, FlatList, ActivityIndicator } from 'react-native';  
+import { StyleSheet, Text, View } from 'react-native';  
 import SearchMovies from './screens/SearchMovies'
 import MovieDetails from './screens/MovieDetails'
 import { createStackNavigator } from '@react-navigation/stack';
@@ -14,8 +14,12 @@ export default class App extends React.Component {
     return (
       <NavigationContainer>
         <Stack.Navigator>
-          <Stack.Screen name = "SearchMovies" component = {SearchMovies} />
-          <Stack.Screen name = "MovieDetails" component = {MovieDetails} />
+          <Stack.Screen name = "SearchMovies" 
+          component = {SearchMovies} 
+          options={{ title: 'Movie Browser' }} />
+          <Stack.Screen name = "MovieDetails" 
+          component = {MovieDetails} 
+          options={{ title: 'Movie Details' }} />
         </ Stack.Navigator>
       </ NavigationContainer>
     );

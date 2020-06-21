@@ -53,7 +53,7 @@ export default class SearchMovies extends React.Component {
   movieTitle = ({ item }) => {
     return (
       <TouchableHighlight
-        style={styles.highlight}
+        style={styles.item}
         underlayColor="white"
         onPress={() => {
           this.props.navigation.navigate("MovieDetails", {
@@ -79,10 +79,8 @@ export default class SearchMovies extends React.Component {
           onChangeText={this.handleSearch}
           underlineColorAndroid="transparent"
         />
-
         <FlatList
           data={this.state.dataSource}
-          ItemSeparatorComponent={this.ListViewItemSeparator}
           renderItem={this.movieTitle}
           keyExtractor={(item) => item.Title + item.imdbID} 
           enableEmptySections={true}
@@ -99,6 +97,14 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
+    borderWidth: 25,
+    padding: 5
+  },
+  item: {
+    backgroundColor: '#D3D3D3',
+    padding: 10,
+    marginVertical: 8,
+    marginHorizontal: 16
   },
   textInputStyle: {
     height: 40,
@@ -108,7 +114,4 @@ const styles = StyleSheet.create({
     backgroundColor: '#FFFFFF',
     marginTop: 40
   },
-  textStyle: {
-    padding: 10
-  }
 });
