@@ -1,4 +1,4 @@
-const API_KEY = "c330b0a9"
+const API_KEY = /* API KEY*/
 
 export const fetchData = async (text) => {
 	const url = `http://www.omdbapi.com/?s=${text}&apikey=${API_KEY}`
